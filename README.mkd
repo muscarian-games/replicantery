@@ -1,3 +1,24 @@
+
+# Replicantery
+
+This game is part of MUD Coders' Guild Enter the MUD Jam 2020. The theme of the jam is Board Games, and this game is specifically inspired by social deception games in general.
+
+The goal, if you are a human, is to uncover the replicant and avoid falsely accusing other humans.
+
+The goal for replicants is to confuse and deceive the humans.
+
+### TODOs:
+
+[] Accusations can lead to death -- false accusations kill the accuser.
+[] Replicants can assassinate humans. Assassination will give away the replicants.
+[] Humans can scan other characters to see if they are replicants.
+[] Leaderboard.
+[] Assign role on login.
+[] One character per account.
+
+### About Ranvier
+This game is based on Ranvier Tiny:
+
 RanvierMUD Tiny is a barebones starter kit for people who "know what they're doing" and just want to have a telnet
 connection, login, command parsing, and movement. There is almost nothing here which may be preferable for those that
 know what they want and don't want to spend time tearing everything down before they can build it back up.
