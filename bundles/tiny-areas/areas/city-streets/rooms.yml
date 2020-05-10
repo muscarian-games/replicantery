@@ -1,13 +1,16 @@
 ---
-- id: start
+- id: start-crossroads
   coordinates: [0, 0, 0]
-  title: Start
+  title: City Crossroads
   description: Empty starting room
-- id: eastwing
+  npcs:
+    - 'city-streets:replicant'
+- id: eastroad
   coordinates: [1, 0, 0]
-  title: East Room
+  title: City Road East
   description: Empty starting room
-- id: westwing
+- id: City Road West
   coordinates: [-1, 0, 0]
   title: West Room
   description: Empty starting room
+

@@ -1,6 +1,7 @@
 'use strict';
-
 const { Broadcast: B } = require('ranvier');
+
+const { generateCodename } = require('../../lib/codenames');
 
 module.exports = {
   listeners: {
@@ -44,5 +45,11 @@ module.exports = {
         callback();
       }
     },
+
+    login: state => function () {
+      const randomName = generateCodename();
+
+      this.metadata.name = randomName;
+    }
   },
 };

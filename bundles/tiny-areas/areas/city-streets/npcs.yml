@@ -1,0 +1,9 @@
+- id: replicant
+  keywords: []
+  name: 'Replicant'
+  level: 1
+  description: ""
+  behaviors:
+    replicant: true
+  attributes:
+    health: 100

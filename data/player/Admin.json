@@ -7,14 +7,16 @@
   },
   "level": 1,
   "name": "Admin",
-  "room": "tiny:westwing",
+  "room": "city-streets:start-crossroads",
   "effects": [],
   "experience": 0,
   "inventory": {
     "items": [],
     "max": 16
   },
-  "metadata": {},
+  "metadata": {
+    "name": "OrbitEvidence"
+  },
   "prompt": "> ",
   "quests": {
     "completed": [],

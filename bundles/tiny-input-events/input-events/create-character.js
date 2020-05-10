@@ -7,7 +7,7 @@ const { Config } = require('ranvier');
  */
 module.exports = {
   event: state => (socket, args) => {
-    socket.write("What would you like to name your character? ");
+    socket.write("What display name would you like for the leaderboard? ");
     socket.once("data", name => {
       socket.write("\r\n");
       name = name.toString("utf8").trim();
@@ -28,7 +28,7 @@ module.exports = {
         return socket.emit('create-player', socket, args);
       }
 
-      socket.write(`Are you sure you want to name your character ${name}? [y/n] `);
+      socket.write(`Are you sure you want the display name ${name}? [y/n] `);
       socket.once('data', confirmation => {
         socket.write("\r\n");
         confirmation = confirmation.toString("utf8").trim().toLowerCase();

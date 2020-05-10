@@ -1,29 +1,28 @@
 'use strict';
-const { Broadcast: B, Item, Logger, Player } = require('ranvier');
+const _ = require('lodash');
+const { Broadcast: B, Logger } = require('ranvier');
+
+const getOtherCharactersInRoom = require('../lib/getOtherCharactersInRoom');
 
 module.exports = {
   command: state => function (args, player) {
     if (!player.room) {
-      Logger.error(player.getName() + ' is in limbo.');
+      Logger.error(player.name + ' is in limbo.');
       return B.sayAt(player, 'You are in a deep, dark void.');
     }
 
     const { room } = player;
 
     B.sayAt(player, room.title);
-    B.sayAt(player, B.line(60));
     B.sayAt(player, room.description, 80);
 
-    for (const otherPlayer of room.players) {
-      if (otherPlayer === player) {
-        continue;
-      }
-
-      B.sayAt(player, `[Player] ${otherPlayer.name}`);
-    }
-
-    for (const npc of room.npcs) {
-      B.sayAt(player, `[NPC] ${npc.name}`);
+    const characters = getOtherCharactersInRoom(room, player);
+    
+    if (characters.length) {
+      const charactersList = _.map(characters, 'metadata.name').join(', ');
+      B.sayAt(player, `Here you find: ${charactersList}.`);
+    } else {
+      B.sayAt(player, 'No one else is here. You\'re safe for now.');
     }
 
     for (const item of room.items) {
@@ -42,7 +41,7 @@ module.exports = {
       foundExits.push(exit);
     }
 
-    B.at(player, '[Exits: ');
+    B.at(player, 'Exits: ');
     B.at(player, foundExits.map(exit => {
       const exitRoom = state.RoomManager.getRoom(exit.roomId);
       const door = room.getDoor(exitRoom) || exitRoom.getDoor(room);
@@ -56,7 +55,5 @@ module.exports = {
     if (!foundExits.length) {
       B.at(player, 'none');
     }
-    B.sayAt(player, ']');
-
   },
 };
