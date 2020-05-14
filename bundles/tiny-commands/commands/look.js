@@ -5,6 +5,7 @@ const { Broadcast: B, Logger } = require('ranvier');
 const getOtherCharactersInRoom = require('../lib/getOtherCharactersInRoom');
 
 module.exports = {
+  aliases: ['l'],
   command: state => function (args, player) {
     if (!player.room) {
       Logger.error(player.name + ' is in limbo.');

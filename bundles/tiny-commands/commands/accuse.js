@@ -19,7 +19,7 @@ module.exports = {
       return B.sayAt(player, 'There is no one else here... paranoid much?');
     }
 
-    const characterAccused = characters.find(char => char.metadata.name.toLowerCase().includes(args));
+    const characterAccused = characters.find(char => char.metadata.name.toLowerCase().includes(args.toLowerCase()));
     if (!characterAccused) {
       return B.sayAt(player, `There is no one called '${args}' here. Perhaps a figment of your imagination?`);
     }
