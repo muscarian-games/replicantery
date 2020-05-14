@@ -9,13 +9,13 @@ The goal for replicants is to confuse and deceive the humans.
 
 ### TODOs:
 
-[] Roles: 1) Replicant 2) Detective 3) Saboteur
-[] One character per account.
-[] Assign role on login.
+[] Roles: 1) Replicant 2) Detective 3) Saboteur 4) Citizen (NPC-only)
+[x] Assign role on login.
 [] Create event hooks for death/kill/point gain or loss.
 [] Detectives can accuse. False accusations = lose points, might(? if accuse saboteur) get killed. Correct accusations mean you kill the replicant and gain a point.
 [] Replicants can assassinate humans. Assassination will give away the replicants. Assassinating a saboteur = lose point. Assassinating a detective = gain point.
 [] Detectives can scan other characters to see if they are replicants.
+[] One character per account.
 [] Leaderboard.
 
 
