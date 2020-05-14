@@ -15,7 +15,9 @@
     "max": 16
   },
   "metadata": {
-    "name": "OrbitEvidence"
+    "name": "MasterImpossible",
+    "points": 3,
+    "role": "detective"
   },
   "prompt": "> ",
   "quests": {
