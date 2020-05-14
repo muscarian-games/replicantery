@@ -9,12 +9,15 @@ The goal for replicants is to confuse and deceive the humans.
 
 ### TODOs:
 
-[] Accusations can lead to death -- false accusations kill the accuser.
-[] Replicants can assassinate humans. Assassination will give away the replicants.
-[] Humans can scan other characters to see if they are replicants.
-[] Leaderboard.
-[] Assign role on login.
+[] Roles: 1) Replicant 2) Detective 3) Saboteur
 [] One character per account.
+[] Assign role on login.
+[] Create event hooks for death/kill/point gain or loss.
+[] Detectives can accuse. False accusations = lose points, might(? if accuse saboteur) get killed. Correct accusations mean you kill the replicant and gain a point.
+[] Replicants can assassinate humans. Assassination will give away the replicants. Assassinating a saboteur = lose point. Assassinating a detective = gain point.
+[] Detectives can scan other characters to see if they are replicants.
+[] Leaderboard.
+
 
 ### About Ranvier
 This game is based on Ranvier Tiny:
