@@ -7,7 +7,7 @@
   },
   "level": 1,
   "name": "Admin",
-  "room": "city-streets:start-crossroads",
+  "room": "city-streets:west-road",
   "effects": [],
   "experience": 0,
   "inventory": {
@@ -15,9 +15,9 @@
     "max": 16
   },
   "metadata": {
-    "name": "DayOnce",
+    "name": "ArmInstance",
     "points": 4,
-    "role": "detective"
+    "role": "replicant"
   },
   "prompt": "> ",
   "quests": {

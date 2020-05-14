@@ -1,11 +1,26 @@
 'use strict';
-const { Broadcast: B } = require('ranvier');
+const { Broadcast: B, Config } = require('ranvier');
 
 const { generateCodename } = require('../../lib/codenames');
 const { getRandomRole, ROLES } = require('../../lib/roles');
 
 module.exports = {
   listeners: {
+    death: state => {
+      const startingRoomRef = Config.get('startingRoom');
+      if (!startingRoomRef) {
+        Logger.error('No startingRoom defined in ranvier.json');
+      }
+
+      return function (killer) {
+       let home = state.RoomManager.getRoom(startingRoomRef);
+       this.moveTo(home, () => {
+        B.sayAt(this, 'You died!');
+        B.sayAt(this,'The system has brought you back in a new role...');
+        this.emit('login');
+       });
+     };
+   },
 
     /** Handle setting up the character's codename, role, & other game-related info. */
     login: state => function () {
@@ -14,14 +29,17 @@ module.exports = {
         this.metadata.points = 0;
       }
 
-      // Set game-based metadata
+      // Set game-based metadata.
       this.metadata.name = randomName;
       this.metadata.role = getRandomRole();
       const roleData = ROLES[this.metadata.role];
 
-      // Inform player of their role
+      // Inform player of their role.
       B.sayAt(this, `You are a ${this.metadata.role}.`);
       B.sayAt(this, roleData.help);
+
+      // Inform others in room of arrival.
+      B.sayAtExcept(this.room, `${this.metadata.codename} arrives, seemingly from thin air.`, [this]);
     },
 
     /**
@@ -54,8 +72,8 @@ module.exports = {
         state.CommandManager.get('look').execute('', this);
       });
 
-      B.sayAt(oldRoom, `${this.name} leaves.`);
-      B.sayAtExcept(nextRoom, `${this.name} enters.`, this);
+      B.sayAt(oldRoom, `${this.metadata.name} leaves.`);
+      B.sayAtExcept(nextRoom, `${this.metadata.name} enters.`, this);
     },
 
     /**
