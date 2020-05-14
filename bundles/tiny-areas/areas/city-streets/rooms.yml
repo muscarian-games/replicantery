@@ -9,8 +9,10 @@
   coordinates: [1, 0, 0]
   title: City Road East
   description: Empty starting room
-- id: City Road West
+- id: west-road
   coordinates: [-1, 0, 0]
-  title: West Room
+  title: City Road West
   description: Empty starting room
+  npcs: 
+    - 'city-streets:citizen'
 

@@ -7,3 +7,12 @@
     replicant: true
   attributes:
     health: 100
+- id: citizen
+  keywords: []
+  name: 'Citizen'
+  level: 1
+  description: ""
+  behaviors:
+    citizen: true
+  attributes:
+    health: 100

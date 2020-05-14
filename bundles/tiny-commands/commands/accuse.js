@@ -32,9 +32,11 @@ module.exports = {
       player.emit('point');
       characterAccused.emit('death');
     } else {
-      B.sayAt(player, `Having wrongly accused ${accusedCodename}, your replicant scanner self-destructs!`);
+      // TODO: Player cannot accuse for 30s
+      B.sayAt(player, `Having wrongly accused ${accusedCodename}, your replicant scanner malfunctions!`);
       characterAccused.emit('point');
-      player.emit('death')
+      player.emit('point', -1)
+      // player.emit('death')
     }
 
     // Player factions: Replicant Hunter vs. Replicant Helper

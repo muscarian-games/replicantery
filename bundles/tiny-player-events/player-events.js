@@ -20,8 +20,8 @@ module.exports = {
       const roleData = ROLES[this.metadata.role];
 
       // Inform player of their role
-      B.sayAt(player, `You are a ${this.metadata.role}.`);
-      B.sayAt(player, roleData.help);
+      B.sayAt(this, `You are a ${this.metadata.role}.`);
+      B.sayAt(this, roleData.help);
     },
 
     /**
@@ -70,7 +70,8 @@ module.exports = {
       const suffix = Math.abs(amount) > 1 ? 's' : ''
 
       this.metadata.points = this.metadata.points + amount;
-      B.sayAt(this, `You have earned ${amount} point${suffix}. (Total: ${this.metadata.points})`);
+      const verb = amount > 0 ? 'earned' : 'lost';
+      B.sayAt(this, `You have ${verb} ${amount} point${suffix}. (Total: ${this.metadata.points})`);
     },
 
     /** Save the player character file. */
