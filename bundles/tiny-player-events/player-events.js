@@ -6,6 +6,10 @@ const { getRandomRole, ROLES } = require('../../lib/roles');
 
 module.exports = {
   listeners: {
+    /**
+     * Handles player death.
+     * Emits #login once again to respawn.
+     */
     death: state => {
       const startingRoomRef = Config.get('startingRoom');
       if (!startingRoomRef) {
@@ -22,7 +26,11 @@ module.exports = {
      };
    },
 
-    /** Handle setting up the character's codename, role, & other game-related info. */
+    /** 
+     * Called on login AND respawn.
+     * Handle setting up the character's codename, role, 
+     * & other game-related info. 
+     * */
     login: state => function () {
       const randomName = generateCodename();
       if (!this.metadata.points) {
