@@ -2,10 +2,11 @@
   "port": 4000,
   "bundles": [
     "telnet-networking",
-    "tiny-input-events",
-    "tiny-areas",
-    "tiny-commands",
-    "tiny-player-events",
+    "rep-input-events",
+    "city-areas",
+    "rep-commands",
+    "robot-spawn",
+    "rep-player-events",
     "tiny-attributes"
   ],
   "dataSources": {
