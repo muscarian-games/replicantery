@@ -1,4 +1,3 @@
-
 # Replicantery
 
 This game is part of MUD Coders' Guild Enter the MUD Jam 2020. The theme of the jam is Board Games, and this game is specifically inspired by social deception games in general.
@@ -7,7 +6,7 @@ The goal, if you are a human, is to uncover the replicant and avoid falsely accu
 
 The goal for replicants is to confuse and deceive the humans.
 
-### TODOs:
+### TODOs
 
 [x] Roles: 1) Replicant 2) Detective 3) Saboteur 4) Citizen (NPC-only)
 [x] Assign role on login.
@@ -15,19 +14,20 @@ The goal for replicants is to confuse and deceive the humans.
 [x] Create event hook for death & respawn.
 [x] Detectives can accuse.
 [x] False accusations = lose points
-[] False accusers might(? if accuse saboteur) get killed.
 [x] Correct accusations mean you kill the replicant and gain a point.
-[] False accusations disable scan/accuse for 30s.
 [] Replicants can zap humans.
-[] Zapping will give away the replicants for 30s. (see glowing eyes, hear zap sound in adjacent rooms)
 [] Zap non-detective = lose point. Zap a detective = gain point.
 [] Detectives can scan other characters to see if they are replicants.
+[] False accusers might(? if accuse saboteur) get killed.
+[] False accusations disable scan/accuse for 30s.
+[] Zapping will give away the replicants for 30s. (see glowing eyes, hear zap sound in adjacent rooms)
+
 [] Different corpse items per role.
 [] One character per account.
 [] Global Leaderboard, per-role Leaderboard - on GameState
 
-
 ### About Ranvier
+
 This game is based on Ranvier Tiny:
 
 RanvierMUD Tiny is a barebones starter kit for people who "know what they're doing" and just want to have a telnet
@@ -48,13 +48,12 @@ default attribute: health.
 
 ### Installation
 
-```
+```bash
 git clone --recursive https://github.com/ranviermud/tiny
 cd tiny
 npm install
 git submodule foreach npm install
 ```
-
 
 ### Special Thanks
 
