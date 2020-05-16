@@ -4,7 +4,8 @@
   level: 1
   description: ""
   behaviors:
-    replicant: true
+    killable: true
+    role: 'replicant'
   attributes:
     health: 100
 - id: citizen
@@ -13,6 +14,7 @@
   level: 1
   description: ""
   behaviors:
-    citizen: true
+    role: true
+    killable: true
   attributes:
     health: 100

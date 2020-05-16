@@ -5,6 +5,10 @@ const { generateCodename } = require('../../../../lib/codenames');
 
 module.exports = {
   listeners: {
+    death: state => function (config) {
+      handleNpcDeath(state, this);
+    },
+
     spawn: state => function (config) {
       if (!this.metadata) {
         this.metadata = {};

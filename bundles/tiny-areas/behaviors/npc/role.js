@@ -2,17 +2,18 @@
 
 const { Logger } = require('ranvier');
 const { generateCodename } = require('../../../../lib/codenames');
+const { getRandomRole } = require('../../../../lib/roles');
 
 module.exports = {
   listeners: {
-    spawn: state => function (config) {
+    spawn: state => function (config = {}) {
       if (!this.metadata) {
         this.metadata = {};
       }
 
       this.metadata.name = generateCodename();
-      this.metadata.role = 'replicant';
-      Logger.log(`Added ${this.metadata.name} as replicant.`);
+      this.metadata.role = config.role || getRandomRole();
+      Logger.log(`Added ${this.metadata.name} as ${this.metadata.role}.`);
     }
   }
 };
