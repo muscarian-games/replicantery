@@ -97,7 +97,7 @@ module.exports = {
 
       this.metadata.points = this.metadata.points + amount;
       const verb = amount > 0 ? 'earned' : 'lost';
-      B.sayAt(this, `You have ${verb} ${amount} point${suffix}. (Total: ${this.metadata.points})`);
+      B.sayAt(this, `You have ${verb} ${Math.abs(amount)} point${suffix}. (Total: ${this.metadata.points})`);
     },
 
     /** Save the player character file. */
