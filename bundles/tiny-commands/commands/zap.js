@@ -20,7 +20,7 @@ module.exports = {
       return B.sayAt(player, 'Who are you trying to fry?');
     }
 
-    // Try to find target of accusation based on args.
+    // Try to find target of zap based on args.
     const { room } = player;
 
     const characters = getOtherCharactersInRoom(room, player);

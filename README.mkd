@@ -15,9 +15,11 @@ The goal for replicants is to confuse and deceive the humans.
 [x] Detectives can accuse.
 [x] False accusations = lose points
 [x] Correct accusations mean you kill the replicant and gain a point.
-[] Replicants can zap humans.
-[] Zap non-detective = lose point. Zap a detective = gain point.
+[x] Replicants can zap humans.
+[x] Zap non-detective = lose point. Zap a detective = gain point.
 [] Detectives can scan other characters to see if they are replicants.
+[] Make the helper function a pure function, no callback.
+[] Use new helper function for old role commands.
 [] False accusers might(? if accuse saboteur) get killed.
 [] False accusations disable scan/accuse for 30s.
 [] Zapping will give away the replicants for 30s. (see glowing eyes, hear zap sound in adjacent rooms)
