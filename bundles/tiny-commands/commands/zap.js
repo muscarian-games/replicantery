@@ -2,7 +2,7 @@
 
 const { Broadcast: B } = require('ranvier');
 
-const getOtherCharactersInRoom = require('../lib/getOtherCharactersInRoom');
+const useTargetedRoleCommand = require('../lib/useTargetedRoleCommand');
 
 const FAILED_ZAP_MESSAGE = {
   citizen: 'They were an innocent!',
@@ -11,27 +11,17 @@ const FAILED_ZAP_MESSAGE = {
 
 module.exports = {
   command: (state) => (args, player) => {
-    if (player.metadata.role !== 'replicant') {
-      return B.sayAt(player, 'You squint really hard but no lasers shoot out of your eyes.');
-    }
+    const {target, failure} = useTargetedRoleCommand({
+      args,
+      invalidArgsMessage: 'Who are you trying to fry?',
+      invalidRoleMessage:  'You squint really hard but no lasers shoot out of your eyes.',
+      targetNotFoundMessage: `There is no one called '%name%' here. Perhaps you've experienced a glitch in your wiring?`,
+      player,
+      requiredRole: 'replicant'
+    });
 
-    // If no args, ask for a target.
-    if (!args) {
-      return B.sayAt(player, 'Who are you trying to fry?');
-    }
-
-    // Try to find target of zap based on args.
-    const { room } = player;
-
-    const characters = getOtherCharactersInRoom(room, player);
-
-    if (!characters.length) {
-      return B.sayAt(player, 'There is no one else here...');
-    }
-
-    const target = characters.find(char => char.metadata.name.toLowerCase().includes(args.toLowerCase()));
-    if (!target) {
-      return B.sayAt(player, `There is no one called '${args}' here. Perhaps you've experienced a glitch in your wiring?`);
+    if (failure) {
+      return B.sayAt(player, failure);
     }
 
     const targetCodename = target.metadata.name;

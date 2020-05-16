@@ -2,31 +2,22 @@
 
 const { Broadcast: B } = require('ranvier');
 
-const getOtherCharactersInRoom = require('../lib/getOtherCharactersInRoom');
+const useTargetedRoleCommand = require('../lib/useTargetedRoleCommand');
 
 module.exports = {
   command: (state) => (args, player) => {
-    if (player.metadata.role !== 'detective') {
-      return B.sayAt(player, 'Who are you to accuse anyone?');
-    }
+    const {target, failure} = useTargetedRoleCommand({
+      args,
+      invalidArgsMessage: 'Who are you accusing?',
+      invalidRoleMessage: 'Who are you to accuse anyone?',
+      noOneHereMessage: 'There is no one else here... paranoid much?',
+      targetNotFoundMessage: `There is no one called '%name%' here. Perhaps a figment of your imagination?`,
+      player,
+      requiredRole: 'detective'
+    });
 
-    // If no args, ask for a target.
-    if (!args) {
-      return B.sayAt(player, 'Who are you accusing?');
-    }
-
-    // Try to find target of accusation based on args.
-    const { room } = player;
-
-    const characters = getOtherCharactersInRoom(room, player);
-
-    if (!characters.length) {
-      return B.sayAt(player, 'There is no one else here... paranoid much?');
-    }
-
-    const target = characters.find(char => char.metadata.name.toLowerCase().includes(args.toLowerCase()));
-    if (!target) {
-      return B.sayAt(player, `There is no one called '${args}' here. Perhaps a figment of your imagination?`);
+    if (failure) {
+      return B.sayAt(player, failure);
     }
 
     const targetCodename = target.metadata.name;

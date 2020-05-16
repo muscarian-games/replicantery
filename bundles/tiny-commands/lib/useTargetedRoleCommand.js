@@ -1,4 +1,3 @@
-const { Broadcast: B } = require('ranvier');
 const getOtherCharactersInRoom = require('./getOtherCharactersInRoom');
 
 /**
@@ -13,37 +12,46 @@ const getOtherCharactersInRoom = require('./getOtherCharactersInRoom');
  * at another character, and requires a specific role.
  */
 module.exports = function useTargetedRoleCommand({
-  args,
-  invalidArgsMessage,
-  invalidRoleMessage,
-  noOneHereMessage,
-  targetNotFoundMessage,
+  args = '',
+  invalidArgsMessage = 'Please specify a target.',
+  invalidRoleMessage = 'You can\'t do that.',
+  noOneHereMessage = 'No one else is here.',
+  targetNotFoundMessage = 'No luck finding %name%.',
   player,
   requiredRole,
-  successCallback,
 }) {
   if (player.metadata.role !== requiredRole) {
-    return B.sayAt(player, invalidRoleMessage);
+    return {
+      failure: invalidRoleMessage
+    };
   }
 
   // If no args, ask for a target.
   if (!args) {
-    return B.sayAt(player, invalidArgsMessage);
+    return {
+      failure: invalidArgsMessage
+    };
   }
 
-  // Try to find target of scan based on args.
+  // Try to find target of command based on args.
   const { room } = player;
 
   const characters = getOtherCharactersInRoom(room, player);
 
   if (!characters.length) {
-    return B.sayAt(player, noOneHereMessage);
+    return {
+      failure: noOneHereMessage
+    }
   }
 
   const target = characters.find(char => char.metadata.name.toLowerCase().includes(args.toLowerCase()));
   if (!target) {
-    return B.sayAt(player, targetNotFoundMessage.replace('%name%', `'${args}'`));
+    return {
+      failure: targetNotFoundMessage.replace('%name%', `'${args}'`)
+    }
   }
 
-  successCallback(player, target);
+  return {
+    target
+  };
 };
