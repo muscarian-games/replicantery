@@ -2,7 +2,6 @@
 
 const { Broadcast: B } = require('ranvier');
 
-const useTargetedRoleCommand = require('../lib/useTargetedRoleCommand');
 
 module.exports = {
   name: 'Accuse',
@@ -12,23 +11,17 @@ module.exports = {
     length: 15
   },
 
+  options: {
+    invalidArgsMessage: 'Who are you accusing?',
+    invalidRoleMessage: 'Who are you to accuse anyone?',
+    noOneHereMessage: 'There is no one else here... paranoid much?',
+    requiredRole: 'detective',
+    targetNotFoundMessage: `There is no one called '%name%' here. Perhaps a figment of your imagination?`,
+  },
+
   requiresTarget: true,
 
-  run: (state) => (args, player) => {
-    const {target, failure} = useTargetedRoleCommand({
-      args,
-      invalidArgsMessage: 'Who are you accusing?',
-      invalidRoleMessage: 'Who are you to accuse anyone?',
-      noOneHereMessage: 'There is no one else here... paranoid much?',
-      targetNotFoundMessage: `There is no one called '%name%' here. Perhaps a figment of your imagination?`,
-      player,
-      requiredRole: 'detective'
-    });
-
-    if (failure) {
-      return B.sayAt(player, failure);
-    }
-
+  run: (state) => (args, player, target) => {
     const targetCodename = target.metadata.name;
     const playerCodename = player.metadata.name;
     B.sayAt(player, `You accuse ${targetCodename} of being a replicant!`);

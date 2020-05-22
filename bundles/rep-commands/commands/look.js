@@ -2,7 +2,7 @@
 const _ = require('lodash');
 const { Broadcast: B, Logger } = require('ranvier');
 
-const getOtherCharactersInRoom = require('../lib/getOtherCharactersInRoom');
+const getOtherCharactersInRoom = require('../../../lib/getOtherCharactersInRoom');
 
 module.exports = {
   aliases: ['l'],

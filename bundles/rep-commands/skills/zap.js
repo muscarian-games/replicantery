@@ -2,8 +2,6 @@
 
 const { Broadcast: B } = require('ranvier');
 
-const useTargetedRoleCommand = require('../lib/useTargetedRoleCommand');
-
 const FAILED_ZAP_MESSAGE = {
   citizen: 'They were an innocent!',
   saboteur: 'In the pile of ashes you see the badge of the resistance! Oh no.'
@@ -17,23 +15,16 @@ module.exports = {
     length: 15
   },
 
+  options: {
+    invalidArgsMessage: 'Who are you trying to fry?',
+    invalidRoleMessage:  'You squint really hard but no lasers shoot out of your eyes.',
+    targetNotFoundMessage: `There is no one called '%name%' here. Perhaps you've experienced a glitch in your wiring?`,
+    requiredRole: 'replicant'
+  },
+
   requiresTarget: true,
   
-  run: (state) => (args, player) => {
-  
-    const {target, failure} = useTargetedRoleCommand({
-      args,
-      invalidArgsMessage: 'Who are you trying to fry?',
-      invalidRoleMessage:  'You squint really hard but no lasers shoot out of your eyes.',
-      targetNotFoundMessage: `There is no one called '%name%' here. Perhaps you've experienced a glitch in your wiring?`,
-      player,
-      requiredRole: 'replicant'
-    });
-
-    if (failure) {
-      return B.sayAt(player, failure);
-    }
-
+  run: (state) => (args, player, target) => {
     const targetCodename = target.metadata.name;
     const playerCodename = player.metadata.name;
     B.sayAt(player, `You fire a lazer at ${targetCodename}!`);

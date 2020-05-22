@@ -3,8 +3,6 @@
 const { Random } = require('rando-js');
 const { Broadcast: B, Logger } = require('ranvier');
 
-const useTargetedRoleCommand = require('../lib/useTargetedRoleCommand');
-
 const { getRandomRole } = require('../../../lib/roles');
 
 const getHumanOrReplicantRole = role => role === 'replicant' ? role : 'human';
@@ -17,23 +15,17 @@ module.exports = {
     length: 5
   },
 
+  options: {
+    invalidArgsMessage: 'Who would you like to scan?',
+    invalidRoleMessage: 'You would need a detective\'s scanner.',
+    noOneHereMessage: 'There is no one else here to scan, and you are fairly sure you\'re not a replicant.',
+    targetNotFoundMessage: 'There is no one here called %name%.',
+    requiredRole: 'detective'
+  },
+
   requiresTarget: true,
 
-  run: (state) => (args, player) => {
-    const {target, failure} = useTargetedRoleCommand({
-      args,
-      invalidArgsMessage: 'Who would you like to scan?',
-      invalidRoleMessage: 'You would need a detective\'s scanner.',
-      noOneHereMessage: 'There is no one else here to scan, and you are fairly sure you\'re not a replicant.',
-      targetNotFoundMessage: 'There is no one here called %name%.',
-      player,
-      requiredRole: 'detective'
-    });
-
-    if (failure) {
-      return B.sayAt(player, failure);
-    }
-
+  run: (state) => (args, player, target) => {
     const targetCodename = target.metadata.name;
     const playerCodename = player.metadata.name;
     B.sayAt(player, `You scan ${targetCodename} for evidence of replicantery!`);

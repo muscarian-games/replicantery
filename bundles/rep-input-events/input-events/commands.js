@@ -5,6 +5,8 @@ const { NoPartyError, NoRecipientError, NoMessageError } = Channel;
 const { CooldownError } = SkillErrors;
 const { CommandParser, InvalidCommandError, RestrictedCommandError } = require('../../../lib/CommandParser');
 
+const useTargetedRoleCommand = require('../../../lib/useTargetedRoleCommand');
+
 module.exports = {
   event: state => player => {
     player.socket.once('data', data => {
@@ -31,14 +33,16 @@ module.exports = {
           }
 
           case CommandType.SKILL: {
-            console.log('Got skill');
-            try {
-              result.skill.execute(result.args, player);
-            } catch (err) {
-              if (err instanceof CooldownError) {
-                B.sayAt(player, 'You cannot use that skill yet.');
-              }
-              Logger.error(err);
+            const {target, failure} = useTargetedRoleCommand({
+              args: result.args,
+              player,
+              ...(result.skill.options || {})
+            });
+
+            if (failure) {
+              B.sayAt(player, failure);
+            } else {
+              result.skill.execute(result.args, player, target);
             }
             break;
           }
@@ -64,6 +68,9 @@ module.exports = {
               B.sayAt(player, "Huh?");
               Logger.warn(`WARNING: Player tried non-existent command '${data}'`);
             }
+            break;
+          case error instanceof CooldownError:
+            B.sayAt(player, 'You cannot use that skill yet.');
             break;
           case error instanceof RestrictedCommandError:
             B.sayAt(player, "You can't do that.");
