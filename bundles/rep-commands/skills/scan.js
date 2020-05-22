@@ -10,7 +10,16 @@ const { getRandomRole } = require('../../../lib/roles');
 const getHumanOrReplicantRole = role => role === 'replicant' ? role : 'human';
 
 module.exports = {
-  command: (state) => (args, player) => {
+  name: 'Scan',
+
+  cooldown: {
+    group: 'detective',
+    length: 5
+  },
+
+  requiresTarget: true,
+
+  run: (state) => (args, player) => {
     const {target, failure} = useTargetedRoleCommand({
       args,
       invalidArgsMessage: 'Who would you like to scan?',

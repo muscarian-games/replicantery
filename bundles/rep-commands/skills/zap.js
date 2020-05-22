@@ -10,7 +10,17 @@ const FAILED_ZAP_MESSAGE = {
 };
 
 module.exports = {
-  command: (state) => (args, player) => {
+  name: 'Zap',
+
+  cooldown: {
+    group: 'replicant',
+    length: 15
+  },
+
+  requiresTarget: true,
+  
+  run: (state) => (args, player) => {
+  
     const {target, failure} = useTargetedRoleCommand({
       args,
       invalidArgsMessage: 'Who are you trying to fry?',

@@ -20,8 +20,8 @@ The goal for replicants is to confuse and deceive the humans.
 - [x] Detectives can scan other characters to see if they are replicants.
 - [x] Make the helper function a pure function, no callback.
 - [x] Use new helper function for old role commands.
-- [] Detective scanners have a cooldown/reveal effect on detective.
-- [] Replicant eye zaps have a cooldown/reveal effect on replicant (including rep. targets)
+- [x] Detective scanners have a cooldown/reveal effect on detective.
+- [x] Replicant eye zaps have a cooldown/reveal effect on replicant (including rep. targets)
 - [] False accusers might(? if accuse saboteur) get killed.
 - [] False accusations disable scan/accuse for 30s.
 - [] Zapping will give away the replicants for 30s. (see glowing eyes, hear zap sound in adjacent rooms)

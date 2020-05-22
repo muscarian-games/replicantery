@@ -1,7 +1,8 @@
 'use strict';
 
-const { Broadcast: B, CommandType, Logger, PlayerRoles } = require('ranvier');
-const { NoPartyError, NoRecipientError, NoMessageError } = require('ranvier').Channel;
+const { Broadcast: B, Channel, CommandType, Logger, PlayerRoles, SkillErrors } = require('ranvier');
+const { NoPartyError, NoRecipientError, NoMessageError } = Channel;
+const { CooldownError } = SkillErrors;
 const { CommandParser, InvalidCommandError, RestrictedCommandError } = require('../../../lib/CommandParser');
 
 module.exports = {
@@ -21,10 +22,24 @@ module.exports = {
         if (!result) {
           throw null;
         }
+        console.log({result});
 
         switch (result.type) {
           case CommandType.MOVEMENT: {
             player.emit('move', result);
+            break;
+          }
+
+          case CommandType.SKILL: {
+            console.log('Got skill');
+            try {
+              result.skill.execute(result.args, player);
+            } catch (err) {
+              if (err instanceof CooldownError) {
+                B.sayAt(player, 'You cannot use that skill yet.');
+              }
+              Logger.error(err);
+            }
             break;
           }
 

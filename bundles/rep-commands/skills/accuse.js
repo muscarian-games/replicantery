@@ -5,7 +5,16 @@ const { Broadcast: B } = require('ranvier');
 const useTargetedRoleCommand = require('../lib/useTargetedRoleCommand');
 
 module.exports = {
-  command: (state) => (args, player) => {
+  name: 'Accuse',
+
+  cooldown: {
+    group: 'detective',
+    length: 15
+  },
+
+  requiresTarget: true,
+
+  run: (state) => (args, player) => {
     const {target, failure} = useTargetedRoleCommand({
       args,
       invalidArgsMessage: 'Who are you accusing?',
