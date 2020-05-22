@@ -11,5 +11,6 @@ module.exports = {
   config: {
     name: 'Cooldown',
     type: 'cooldown',
+    persists: false,
   }
 };
