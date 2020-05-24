@@ -2,7 +2,14 @@
 const _ = require('lodash');
 const { Broadcast: B, Logger } = require('ranvier');
 
+const getHumanOrReplicantRole = require('../lib/getHumanOrReplicantRole');
 const getOtherCharactersInRoom = require('../../../lib/getOtherCharactersInRoom');
+const getScannedAmount = require('../lib/getScannedAmount');
+
+const ROLE_EXPOSED_TEXT = {
+  human: 'is sweating',
+  replicant: 'has glowing eyes',
+};
 
 module.exports = {
   aliases: ['l'],
@@ -20,7 +27,14 @@ module.exports = {
     const characters = getOtherCharactersInRoom(room, player);
     
     if (characters.length) {
-      const charactersList = _.map(characters, 'metadata.name').join(', ');
+      const charactersList = _.map(characters, (char) => {
+        const name = _.get(char, 'metadata.name');
+        if (char.hasEffectType('cooldown') || getScannedAmount(char) >= 3) {
+          const roleType = getHumanOrReplicantRole(char.metadata.role);
+          return `${name} ${ROLE_EXPOSED_TEXT[roleType]}`;
+        }
+        return name;
+      }).join(', ');
       B.sayAt(player, `Here you find: ${charactersList}.`);
     } else {
       B.sayAt(player, 'No one else is here. You\'re safe for now.');

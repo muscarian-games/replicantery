@@ -4,8 +4,8 @@ const { Random } = require('rando-js');
 const { Broadcast: B, Logger } = require('ranvier');
 
 const { getRandomRole } = require('../../../lib/roles');
-
-const getHumanOrReplicantRole = role => role === 'replicant' ? role : 'human';
+const getHumanOrReplicantRole = require('../lib/getHumanOrReplicantRole');
+const getScannedAmount = require('../lib/getScannedAmount');
 
 module.exports = {
   name: 'Scan',
@@ -36,20 +36,13 @@ module.exports = {
     const scannedEffect = state.EffectFactory.create(
       'scanned',
     );
-
     target.addEffect(scannedEffect);
 
-    const scannerEffect = state.EffectFactory.create(
-      'scanner',
-    );
-
-    target.addEffect(scannerEffect);
 
     B.sayAt(target, `You have been scanned by ${playerCodename}.`);
     B.sayAtExcept(player.room, `${playerCodename} scans ${targetCodename}!`, [player, target]);
   
-    const scannedEffectOnTarget = target.effects.getByType('scanned');
-    const scannedAmount = scannedEffectOnTarget.state.stacks;
+    const scannedAmount = getScannedAmount(target);
 
     if (scannedAmount >= 3) {
       if (scannedAmount > 3) {

@@ -7,7 +7,7 @@
   },
   "level": 1,
   "name": "Admin",
-  "room": "city-streets:west-road",
+  "room": "city-streets:start-crossroads",
   "effects": [],
   "experience": 0,
   "inventory": {
@@ -15,9 +15,9 @@
     "max": 16
   },
   "metadata": {
-    "name": "SaveStranger",
-    "points": 3,
-    "role": "saboteur"
+    "name": "BegunRain",
+    "points": 2,
+    "role": "detective"
   },
   "prompt": "> ",
   "quests": {
