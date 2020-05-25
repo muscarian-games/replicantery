@@ -24,11 +24,13 @@ The goal for replicants is to confuse and deceive the humans.
 - [x] Replicant eye zaps have a cooldown/reveal effect on replicant (including rep. targets)
 - [x] False accusations disable scan/accuse for 30s.
 - [x] Zapping will give away the replicants for 30s. (see glowing eyes, hear zap sound in adjacent rooms)
+- [] One character per account.
+- [] ^ If the account has a character, just log them into that directly.
+- [] Global Leaderboard, per-role Leaderboard - on GameState.
+- [] ^ Show number of current players on leaderboard
 - [] False accusers might(? if accuse saboteur) get killed.
 - [] Different corpse items per role.
-- [] One character per account.
-- [] Global Leaderboard, per-role Leaderboard - on GameState
-- [] Create city map using Axolemma
+- [] Create city map using Axolemma.
 
 ### About Ranvier
 

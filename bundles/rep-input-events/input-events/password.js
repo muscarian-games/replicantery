@@ -1,5 +1,7 @@
 "use strict";
 
+const _ = require('lodash');
+
 const passwordAttempts = {};
 const maxFailedAttempts = 3;
 
@@ -40,8 +42,12 @@ module.exports = {
         return socket.emit("create-character", socket, args);
       }
 
+      const character = _.first(args.account.characters);
       socket.write("\r\nWelcome back!\r\n");
-      socket.emit("account-menu", socket, args);
+      socket.emit("finish-character", socket, {
+        name: character.username,
+        account: args.account
+      });
     });
   }
 };
