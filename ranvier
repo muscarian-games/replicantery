@@ -77,6 +77,8 @@ Logger.setLevel(logLevel);
 let GameState = {};
 let saveInterval, tickInterval, playerTickInterval;
 
+const Leaderboard = new (require('./lib/Leaderboard'));
+
 /**
  * Do the dirty work
  */
@@ -99,6 +101,7 @@ async function init(restartServer) {
     ItemBehaviorManager: new Ranvier.BehaviorManager(),
     ItemFactory: new Ranvier.ItemFactory(),
     ItemManager: new Ranvier.ItemManager(),
+    Leaderboard,
     MobBehaviorManager: new Ranvier.BehaviorManager(),
     MobFactory: new Ranvier.MobFactory(),
     MobManager: new Ranvier.MobManager(),

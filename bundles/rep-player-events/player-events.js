@@ -1,5 +1,5 @@
 'use strict';
-const { Broadcast: B, Config } = require('ranvier');
+const { Broadcast: B, Config, Logger } = require('ranvier');
 
 const { generateCodename } = require('../../lib/codenames');
 const { getRandomRole, ROLES } = require('../../lib/roles');
@@ -88,21 +88,26 @@ module.exports = {
      * Increment or decrement the character's points
      */
     point: state => function (amount = 1) {
-      if (isNaN(this.metadata.points)) {
+      if (isNaN(this.account.metadata.points)) {
         Logger.warn(`Player ${this.name} had invalid points.`);
-        this.metadata.points = 0;
+        this.account.metadata.points = 0;
       }
 
-      const suffix = Math.abs(amount) > 1 ? 's' : ''
+      const suffix = Math.abs(amount) > 1 ? 's' : '';
 
-      this.metadata.points = this.metadata.points + amount;
+      this.account.metadata.points = this.account.metadata.points + amount;
       const verb = amount > 0 ? 'earned' : 'lost';
-      B.sayAt(this, `You have ${verb} ${Math.abs(amount)} point${suffix}. (Total: ${this.metadata.points})`);
+      B.sayAt(this, `You have ${verb} ${Math.abs(amount)} point${suffix}. (Total: ${this.account.metadata.points})`);
+      state.Leaderboard.setScore(this);
+      console.log(state.Leaderboard.getTopNScores(10));
+      
+      this.emit('save', () => this.account.save());
     },
 
     /** Save the player character file. */
     save: state => async function (callback) {
       await state.PlayerManager.save(this);
+      Logger.log('Saved ' + this.name);
       if (typeof callback === 'function') {
         callback();
       }
