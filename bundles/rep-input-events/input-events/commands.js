@@ -24,7 +24,6 @@ module.exports = {
         if (!result) {
           throw null;
         }
-        console.log({result});
 
         switch (result.type) {
           case CommandType.MOVEMENT: {
