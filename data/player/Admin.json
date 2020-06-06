@@ -5,10 +5,10 @@
       "base": 100
     }
   },
+  "effects": [],
   "level": 1,
   "name": "Admin",
   "room": "city-streets:start-crossroads",
-  "effects": [],
   "experience": 0,
   "inventory": {
     "items": [],
@@ -16,8 +16,8 @@
   },
   "metadata": {
     "points": 0,
-    "name": "SteelLeast",
-    "role": "replicant"
+    "name": "ThreadReach",
+    "role": "saboteur"
   },
   "prompt": "> ",
   "quests": {
