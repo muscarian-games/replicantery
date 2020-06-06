@@ -2,13 +2,13 @@
 
 This game is part of MUD Coders' Guild Enter the MUD Jam 2020. The theme of the jam is Board Games, and this game is specifically inspired by social deception games in general.
 
-The goal, if you are a human, is to uncover the replicant and avoid falsely accusing other humans.
+The goal, if you are a human detective, is to uncover the replicant and avoid falsely accusing other humans.
 
 The goal for replicants is to confuse and deceive the humans.
 
 ### TODOs
 
-- [x] Roles: 1) Replicant 2) Detective 3) Saboteur 4) Citizen (NPC-only)
+- [x] Roles: 1) Replicant 2) Detective (Player-only) 4) Citizen (NPC-only)
 - [x] Assign role on login.
 - [x] Create event hooks for point gain or loss.
 - [x] Create event hook for death & respawn.
@@ -26,12 +26,11 @@ The goal for replicants is to confuse and deceive the humans.
 - [x] Zapping will give away the replicants for 30s. (see glowing eyes, hear zap sound in adjacent rooms)
 - [x] One character per account.
 - [x] ^ If the account has a character, just log them into that directly.
-- [] Global Leaderboard, per-role Leaderboard - on GameState.
+- [x] Global Leaderboard, per-role Leaderboard - on GameState.
 - [] ^ Show number of current players on leaderboard
 - [] ^ Optimize leaderboard eventually, no need to keep a map of every single account and score.
-- [] False accusers might(? if accuse saboteur) get killed.
-- [] Different corpse items per role.
 - [] Create city map using Axolemma.
+- [] Implement NPC movement.
 
 ### About Ranvier
 

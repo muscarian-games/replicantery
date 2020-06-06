@@ -4,7 +4,6 @@ const { Broadcast: B } = require('ranvier');
 
 const FAILED_ZAP_MESSAGE = {
   citizen: 'They were an innocent!',
-  saboteur: 'In the pile of ashes you see the badge of the resistance! Oh no.'
 };
 
 module.exports = {
