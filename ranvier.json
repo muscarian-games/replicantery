@@ -79,7 +79,7 @@
   "minPlayerNameLength": 3,
   "maxCharacters": 3,
   "reportToAdmins": false,
-  "startingRoom": "city-streets:start-crossroads",
+  "startingRoom": "city-streets:city-streets-0",
   "moveCommand": "move",
   "skillLag": 2000,
   "defaultMaxPlayerInventory": 16,

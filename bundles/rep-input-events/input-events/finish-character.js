@@ -31,8 +31,11 @@ module.exports = {
         player.addAttribute(state.AttributeFactory.create(attr));
       }
 
-      args.account.addCharacter(args.name);
-      args.account.save();
+      if (!args.account.hasCharacter(args.name)) {
+        Logger.log('Adding new character ' + args.name);
+        args.account.addCharacter(args.name);
+        args.account.save();
+      }
 
       const room = state.RoomManager.getRoom(startingRoomRef);
       player.room = room;

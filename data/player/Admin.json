@@ -8,17 +8,13 @@
   "effects": [],
   "level": 1,
   "name": "Admin",
-  "room": "city-streets:start-crossroads",
+  "room": "city-streets:city-streets-0",
   "experience": 0,
   "inventory": {
     "items": [],
     "max": 16
   },
-  "metadata": {
-    "points": 0,
-    "name": "ThreadReach",
-    "role": "saboteur"
-  },
+  "metadata": {},
   "prompt": "> ",
   "quests": {
     "completed": [],

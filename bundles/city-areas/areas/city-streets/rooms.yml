@@ -1,18 +1,124 @@
----
-- id: start-crossroads
-  coordinates: [0, 0, 0]
-  title: City Crossroads
-  description: Empty starting room
-  npcs:
-    - 'city-streets:replicant'
-- id: eastroad
-  coordinates: [1, 0, 0]
-  title: City Road East
-  description: Empty starting room
-- id: west-road
-  coordinates: [-1, 0, 0]
-  title: City Road West
-  description: Empty starting room
-  npcs: 
-    - 'city-streets:citizen'
-
+- id: city-streets-0
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [1, 1, 0]
+- id: city-streets-1
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [1, 2, 0]
+- id: city-streets-2
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [1, 3, 0]
+- id: city-streets-3
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [1, 4, 0]
+- id: city-streets-4
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [1, 5, 0]
+- id: city-streets-5
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [1, 6, 0]
+- id: city-streets-6
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [1, 7, 0]
+- id: city-streets-7
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [2, 5, 0]
+- id: city-streets-8
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [2, 7, 0]
+- id: city-streets-9
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [3, 1, 0]
+- id: city-streets-10
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [3, 2, 0]
+- id: city-streets-11
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [3, 3, 0]
+- id: city-streets-12
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [3, 4, 0]
+- id: city-streets-13
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [3, 5, 0]
+- id: city-streets-14
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [3, 7, 0]
+- id: city-streets-15
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [4, 5, 0]
+- id: city-streets-16
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [4, 7, 0]
+- id: city-streets-17
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [5, 1, 0]
+- id: city-streets-18
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [5, 2, 0]
+- id: city-streets-19
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [5, 3, 0]
+- id: city-streets-20
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [5, 5, 0]
+- id: city-streets-21
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [5, 7, 0]
+- id: city-streets-22
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [6, 3, 0]
+- id: city-streets-23
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [6, 5, 0]
+- id: city-streets-24
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [6, 7, 0]
+- id: city-streets-25
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [7, 1, 0]
+- id: city-streets-26
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [7, 2, 0]
+- id: city-streets-27
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [7, 3, 0]
+- id: city-streets-28
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [7, 4, 0]
+- id: city-streets-29
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [7, 5, 0]
+- id: city-streets-30
+  title: City Streets
+  description: Another concrete slab in the barren wasteland of The City.
+  coordinates: [7, 7, 0]
