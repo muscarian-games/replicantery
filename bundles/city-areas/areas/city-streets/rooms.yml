@@ -1,37 +1,37 @@
 - id: city-streets-0
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Tybalt Avenue (Community Center)
+  description: The City's near-derelict community center, where all newcomers start out. Stretching to your north is a concrete street, lined with abandoned buildings and the occasional neon light.
   coordinates: [1, 1, 0]
 - id: city-streets-1
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Tybalt Avenue
+  description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue covers the western edge of The City and is home to miscreants and replicant rebels.
   coordinates: [1, 2, 0]
 - id: city-streets-2
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Tybalt Avenue
+  description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue covers the western edge of The City and is home to miscreants and replicant rebels.
   coordinates: [1, 3, 0]
 - id: city-streets-3
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Tybalt Avenue
+  description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue covers the western edge of The City and is home to miscreants and replicant rebels.
   coordinates: [1, 4, 0]
 - id: city-streets-4
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Tybalt Avenue
+  description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue covers the western edge of The City and is home to miscreants and replicant rebels.
   coordinates: [1, 5, 0]
 - id: city-streets-5
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Tybalt Avenue Crossroads
+  description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue covers the western edge of The City and is home to miscreants and replicant rebels.
   coordinates: [1, 6, 0]
 - id: city-streets-6
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Tybalt Avenue
+  description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue ends here, curving to the east to become Segway Lane.
   coordinates: [1, 7, 0]
 - id: city-streets-7
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Fluptic Boulevard
+  description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard. Now glitchheads lay in the darker corners, dreaming of electric sheep.
   coordinates: [2, 5, 0]
 - id: city-streets-8
-  title: City Streets
+  title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [2, 7, 0]
 - id: city-streets-9
@@ -51,19 +51,19 @@
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [3, 4, 0]
 - id: city-streets-13
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Fluptic Boulevard
+  description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
   coordinates: [3, 5, 0]
 - id: city-streets-14
-  title: City Streets
+  title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [3, 7, 0]
 - id: city-streets-15
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Fluptic Boulevard
+  description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
   coordinates: [4, 5, 0]
 - id: city-streets-16
-  title: City Streets
+  title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [4, 7, 0]
 - id: city-streets-17
@@ -79,11 +79,11 @@
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [5, 3, 0]
 - id: city-streets-20
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Fluptic Boulevard
+  description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
   coordinates: [5, 5, 0]
 - id: city-streets-21
-  title: City Streets
+  title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [5, 7, 0]
 - id: city-streets-22
@@ -92,10 +92,10 @@
   coordinates: [6, 3, 0]
 - id: city-streets-23
   title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
   coordinates: [6, 5, 0]
 - id: city-streets-24
-  title: City Streets
+  title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [6, 7, 0]
 - id: city-streets-25
@@ -116,9 +116,9 @@
   coordinates: [7, 4, 0]
 - id: city-streets-29
   title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
   coordinates: [7, 5, 0]
 - id: city-streets-30
-  title: City Streets
+  title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [7, 7, 0]
