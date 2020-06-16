@@ -14,7 +14,12 @@
     "items": [],
     "max": 16
   },
-  "metadata": {},
+  "metadata": {
+    "points": 0,
+    "name": "HelloBeneath",
+    "role": "detective",
+    "brief": false
+  },
   "prompt": "> ",
   "quests": {
     "completed": [],

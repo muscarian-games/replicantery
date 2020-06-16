@@ -45,6 +45,7 @@ module.exports = {
       // Inform player of their role.
       B.sayAt(this, `You are a ${this.metadata.role}.`);
       B.sayAt(this, roleData.help);
+      B.sayAt(this, `Use 'brief' to toggle brief descriptions on/off.`);
 
       // Inform others in room of arrival.
       B.sayAtExcept(this.room, `${this.metadata.codename} arrives, seemingly from thin air.`, [this]);

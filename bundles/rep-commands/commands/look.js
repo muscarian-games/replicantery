@@ -21,8 +21,10 @@ module.exports = {
 
     const { room } = player;
 
-    B.sayAt(player, room.title);
-    B.sayAt(player, room.description, 80);
+    B.sayAt(player, `${room.title} ${room.entityReference} ${JSON.stringify(room.coordinates)}`);
+    if (!player.getMeta('brief')) {
+      B.sayAt(player, room.description, 80);
+    }
 
     const characters = getOtherCharactersInRoom(room, player);
     
