@@ -4,6 +4,7 @@ const { Random } = require('rando-js');
 const { Broadcast: B, Logger } = require('ranvier');
 
 const { getRandomRole } = require('../../../lib/roles');
+const alertAreaWithDistance = require('../lib/alertAreaWithDistance');
 const getHumanOrReplicantRole = require('../lib/getHumanOrReplicantRole');
 const getScannedAmount = require('../lib/getScannedAmount');
 
@@ -41,8 +42,9 @@ module.exports = {
 
     B.sayAt(target, `You have been scanned by ${playerCodename}.`);
     B.sayAtExcept(player.room, `${playerCodename} scans ${targetCodename}!`, [player, target]);
-  
+
     const scannedAmount = getScannedAmount(target);
+    alertAreaWithDistance(state, player, 'a scanner operating');
 
     if (scannedAmount >= 3) {
       if (scannedAmount > 3) {
@@ -62,5 +64,6 @@ module.exports = {
       const roleTypeGuess = getHumanOrReplicantRole(roleGuess);
       B.sayAt(player, `You are 50% confident that they are a ${roleTypeGuess}.`);
     }
+
   }
 };

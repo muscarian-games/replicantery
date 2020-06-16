@@ -1,7 +1,7 @@
 'use strict';
 
 const { Broadcast: B } = require('ranvier');
-
+const alertAreaWithDistance = require('../lib/alertAreaWithDistance');
 
 module.exports = {
   name: 'Accuse',
@@ -25,6 +25,7 @@ module.exports = {
     const targetCodename = target.metadata.name;
     const playerCodename = player.metadata.name;
     B.sayAt(player, `You accuse ${targetCodename} of being a replicant!`);
+    alertAreaWithDistance(state, player, 'a scanner firing');
 
     // Handle the consequences of the accusation.
     if (target.metadata.role === 'replicant') {

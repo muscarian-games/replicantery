@@ -8,7 +8,7 @@
   "effects": [],
   "level": 1,
   "name": "Admin",
-  "room": "city-streets:city-streets-0",
+  "room": "city-streets:city-streets-13",
   "experience": 0,
   "inventory": {
     "items": [],
@@ -16,9 +16,9 @@
   },
   "metadata": {
     "points": 0,
-    "name": "HelloBeneath",
+    "name": "DepthSuch",
     "role": "detective",
-    "brief": false
+    "brief": true
   },
   "prompt": "> ",
   "quests": {

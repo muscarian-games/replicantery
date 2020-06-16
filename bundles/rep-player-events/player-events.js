@@ -48,7 +48,7 @@ module.exports = {
       B.sayAt(this, `Use 'brief' to toggle brief descriptions on/off.`);
 
       // Inform others in room of arrival.
-      B.sayAtExcept(this.room, `${this.metadata.codename} arrives, seemingly from thin air.`, [this]);
+      B.sayAtExcept(this.room, `${randomName} arrives, seemingly from thin air.`, [this]);
     },
 
     /**

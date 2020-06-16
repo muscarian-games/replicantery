@@ -8,7 +8,7 @@ module.exports = {
     const playerScore = player.account.getMeta('score');
     const say = m => Broadcast.sayAt(player, m);
 
-    say(`Your score is ${playerScore}.`);
+    say(`Your score is ${playerScore || 0}.`);
 
     say(`Top ten scores:`);
     let i = 1;

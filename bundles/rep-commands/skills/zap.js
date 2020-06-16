@@ -1,7 +1,7 @@
 'use strict';
 
 const { Broadcast: B } = require('ranvier');
-
+const alertAreaWithDistance = require('../lib/alertAreaWithDistance');
 const FAILED_ZAP_MESSAGE = {
   citizen: 'They were an innocent!',
 };
@@ -33,6 +33,8 @@ module.exports = {
     // Zapping any human kills them.
     // If detective, zapper gains a point.
     // Else, lose a point.
+
+    alertAreaWithDistance(state, player, 'a replicant zapping someone');
 
     // Handle the consequences of the accusation.
     if (target.metadata.role === 'replicant') {
