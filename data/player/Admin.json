@@ -8,18 +8,13 @@
   "effects": [],
   "level": 1,
   "name": "Admin",
-  "room": "city-streets:city-streets-13",
+  "room": "city-streets:city-streets-0",
   "experience": 0,
   "inventory": {
     "items": [],
     "max": 16
   },
-  "metadata": {
-    "points": 0,
-    "name": "DepthSuch",
-    "role": "detective",
-    "brief": true
-  },
+  "metadata": {},
   "prompt": "> ",
   "quests": {
     "completed": [],

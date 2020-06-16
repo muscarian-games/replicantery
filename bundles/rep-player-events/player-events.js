@@ -4,6 +4,17 @@ const { Broadcast: B, Config, Logger } = require('ranvier');
 const { generateCodename } = require('../../lib/codenames');
 const { getRandomRole, ROLES } = require('../../lib/roles');
 
+const REVERSE_DIRECTION_MAP = {
+  east: 'west',
+  north: 'south',
+  west: 'east',
+  south: 'north',
+  northeast: 'southwest',
+  southwest: 'northeast',
+  southeast: 'northwest',
+  northwest: 'southeast',
+};
+
 module.exports = {
   listeners: {
     /**
@@ -81,8 +92,8 @@ module.exports = {
         state.CommandManager.get('look').execute('', this);
       });
 
-      B.sayAt(oldRoom, `${this.metadata.name} leaves.`);
-      B.sayAtExcept(nextRoom, `${this.metadata.name} enters.`, this);
+      B.sayAt(oldRoom, `${this.metadata.name} leaves ${roomExit.direction}.`);
+      B.sayAtExcept(nextRoom, `${this.metadata.name} enters from the ${REVERSE_DIRECTION_MAP[roomExit.direction]}.`, this);
     },
 
     /**
