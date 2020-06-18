@@ -22,6 +22,7 @@
   title: Tybalt Avenue Crossroads
   description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue covers the western edge of The City and is home to miscreants and replicant rebels.
   coordinates: [1, 6, 0]
+  npcs: ['city-streets:citizen']
 - id: city-streets-6
   title: Tybalt Avenue
   description: One of the streets of The City that has been mostly abandoned. To the south is the community center. Tybalt Avenue ends here, curving to the east to become Segway Lane.
@@ -30,6 +31,7 @@
   title: Fluptic Boulevard
   description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard. Now glitchheads lay in the darker corners, dreaming of electric sheep.
   coordinates: [2, 5, 0]
+  npcs: ['city-streets:citizen']
 - id: city-streets-8
   title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
@@ -58,10 +60,12 @@
   title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [3, 7, 0]
+  npcs: ['city-streets:citizen']
 - id: city-streets-15
   title: Fluptic Boulevard
   description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
   coordinates: [4, 5, 0]
+  npcs: ['city-streets:citizen']
 - id: city-streets-16
   title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
@@ -91,9 +95,10 @@
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [6, 3, 0]
 - id: city-streets-23
-  title: City Streets
+  title: Fluptic Boulevard
   description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
   coordinates: [6, 5, 0]
+  npcs: ['city-streets:citizen']
 - id: city-streets-24
   title: Segway Lane
   description: Another concrete slab in the barren wasteland of The City.
@@ -106,6 +111,7 @@
   title: City Streets
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [7, 2, 0]
+  npcs: ['city-streets:citizen']
 - id: city-streets-27
   title: City Streets
   description: Another concrete slab in the barren wasteland of The City.

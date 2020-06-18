@@ -16,5 +16,6 @@
   behaviors:
     role: true
     killable: true
+    wander: true
   attributes:
     health: 100
