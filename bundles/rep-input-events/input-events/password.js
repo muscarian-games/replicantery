@@ -44,7 +44,7 @@ module.exports = {
 
       const character = _.first(args.account.characters);
       socket.write("\r\nWelcome back!\r\n");
-      socket.emit("finish-character", socket, {
+      socket.emit("account-menu", socket, {
         name: character.username,
         account: args.account
       });

@@ -24,45 +24,6 @@ module.exports = {
       },
     });
 
-    if (canAddCharacter) {
-      options.push({
-        display: "Create New Character",
-        onSelect: () => {
-          socket.emit("create-character", socket, { account });
-        },
-      });
-    }
-
-    if (characters.length) {
-      options.push({ display: "Login As:" });
-      characters.forEach(char => {
-        options.push({
-          display: char.username,
-          onSelect: async () => {
-            let currentPlayer = pm.getPlayer(char.username);
-            let existed = false;
-            if (currentPlayer) {
-              // kill old connection
-              Broadcast.at(currentPlayer, "Connection taken over by another client. Goodbye.");
-              currentPlayer.socket.end();
-
-              // link new socket
-              currentPlayer.socket = socket;
-              Broadcast.at(currentPlayer, "Taking over old connection. Welcome.");
-              Broadcast.prompt(currentPlayer);
-
-              currentPlayer.socket.emit("commands", currentPlayer);
-              return;
-            }
-
-            currentPlayer = await state.PlayerManager.loadPlayer(state, account, char.username);
-            currentPlayer.socket = socket;
-            socket.emit("done", socket, { player: currentPlayer });
-          },
-        });
-      });
-    }
-
     options.push({ display: "" });
 
     options.push({
