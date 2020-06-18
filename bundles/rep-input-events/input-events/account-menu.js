@@ -8,7 +8,7 @@ module.exports = {
 
     const pm = state.PlayerManager;
 
-    socket.write("Choose your character:\r\n");
+    socket.write("Choose your fate:\r\n");
     // This just gets their names.
     const characters = account.characters.filter(currChar => currChar.deleted === false);
     const maxCharacters   = Config.get("maxCharacters");
