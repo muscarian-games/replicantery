@@ -16,7 +16,7 @@ module.exports = {
 
       if (invalid) {
         socket.write(invalid + "\r\n");
-        return socket.emit('create-player', socket, args);
+        return socket.emit('create-character', socket, args);
       }
 
       name = name[0].toUpperCase() + name.slice(1);
@@ -24,8 +24,8 @@ module.exports = {
       const exists = state.PlayerManager.exists(name);
 
       if (exists) {
-        say(`That name is already taken.`);
-        return socket.emit('create-player', socket, args);
+        socket.write(`That name is already taken.\r\n`);
+        return socket.emit('create-character', socket, args);
       }
 
       socket.write(`Are you sure you want the display name ${name}? [y/n] `);
@@ -34,8 +34,8 @@ module.exports = {
         confirmation = confirmation.toString("utf8").trim().toLowerCase();
 
         if (confirmation !== 'y') {
-          say(`Let's try again...`);
-          return socket.emit('create-player', socket, args);
+          socket.write(`Let's try again...\r\n`);
+          return socket.emit('create-character', socket, args);
         }
 
         args.name = name;

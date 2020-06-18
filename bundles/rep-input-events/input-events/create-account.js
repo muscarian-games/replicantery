@@ -18,7 +18,7 @@ module.exports = {
 
         return socket.emit("change-password", socket, {
           account: newAccount,
-          nextStage: "create-character"
+          nextStage: "change-email"
         });
       } else if (data && data === "n" || data === "no") {
         socket.write("Let's try again!\r\n");
