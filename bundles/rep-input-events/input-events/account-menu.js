@@ -1,5 +1,5 @@
 "use strict";
-
+const _ = require('lodash');
 const { Broadcast, Config, Logger } = require("ranvier");
 
 module.exports = {
@@ -23,6 +23,38 @@ module.exports = {
         socket.emit("change-password", socket, { account, nextStage: "account-menu" });
       },
     });
+
+    const character = _.first(characters);
+
+    if (characters.length) {
+      options.push({ display: "Login As:" });
+      [character].forEach(char => {
+        options.push({
+          display: char.username,
+          onSelect: async () => {
+            let currentPlayer = pm.getPlayer(char.username);
+            let existed = false;
+            if (currentPlayer) {
+              // kill old connection
+              Broadcast.at(currentPlayer, "Connection taken over by another client. Goodbye.");
+              currentPlayer.socket.end();
+
+              // link new socket
+              currentPlayer.socket = socket;
+              Broadcast.at(currentPlayer, "Taking over old connection. Welcome.");
+              Broadcast.prompt(currentPlayer);
+
+              currentPlayer.socket.emit("commands", currentPlayer);
+              return;
+            }
+
+            currentPlayer = await state.PlayerManager.loadPlayer(state, account, char.username);
+            currentPlayer.socket = socket;
+            socket.emit("done", socket, { player: currentPlayer });
+          },
+        });
+      });
+    }
 
     options.push({ display: "" });
 
