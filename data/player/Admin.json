@@ -8,13 +8,18 @@
   "effects": [],
   "level": 1,
   "name": "Admin",
-  "room": "city-streets:city-streets-0",
+  "room": "city-streets:city-streets-2",
   "experience": 0,
   "inventory": {
     "items": [],
     "max": 16
   },
-  "metadata": {},
+  "metadata": {
+    "points": 0,
+    "name": "ShownLost",
+    "role": "detective",
+    "brief": true
+  },
   "prompt": "> ",
   "quests": {
     "completed": [],

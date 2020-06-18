@@ -12,7 +12,6 @@ module.exports = {
     // This just gets their names.
     const characters = account.characters.filter(currChar => currChar.deleted === false);
     const maxCharacters   = Config.get("maxCharacters");
-    const canAddCharacter = characters.length < maxCharacters;
 
     let options = [];
 
@@ -27,10 +26,10 @@ module.exports = {
     const character = _.first(characters);
 
     if (characters.length) {
-      options.push({ display: "Login As:" });
+      options.push({ display: "Characters:" });
       [character].forEach(char => {
         options.push({
-          display: char.username,
+          display: `Login as ${char.username}`,
           onSelect: async () => {
             let currentPlayer = pm.getPlayer(char.username);
             let existed = false;
@@ -69,13 +68,13 @@ module.exports = {
     options.forEach((opt) => {
       if (opt.onSelect) {
         optionI++;
-        socket.write(`| [${optionI}] ${opt.display}\r\n`);
+        socket.write(`Press ${optionI} to ${opt.display}\r\n`);
       } else {
-        socket.write(`| ${opt.display}\r\n`);
+        socket.write(`${opt.display}\r\n`);
       }
     });
 
-    socket.write("|\r\n`-> ");
+    socket.write("\r\n`-> ");
 
     socket.once("data", choice => {
       choice = choice.toString().trim();

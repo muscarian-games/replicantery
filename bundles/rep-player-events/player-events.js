@@ -51,12 +51,9 @@ module.exports = {
       // Set game-based metadata.
       this.metadata.name = randomName;
       this.metadata.role = getRandomRole();
-      const roleData = ROLES[this.metadata.role];
 
       // Inform player of their role.
-      B.sayAt(this, `You are a ${this.metadata.role}.`);
-      B.sayAt(this, roleData.help);
-      B.sayAt(this, `Use 'brief' to toggle brief descriptions on/off.`);
+      state.CommandManager.get('help').execute('', this);
 
       // Inform others in room of arrival.
       B.sayAtExcept(this.room, `${randomName} arrives, seemingly from thin air.`, [this]);
