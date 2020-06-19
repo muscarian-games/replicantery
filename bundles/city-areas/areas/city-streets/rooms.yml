@@ -58,7 +58,7 @@
   coordinates: [3, 5, 0]
 - id: city-streets-14
   title: Segway Lane
-  description: Another concrete slab in the barren wasteland of The City.
+  description: The most boring, tourist-y part of The City.
   coordinates: [3, 7, 0]
   npcs: ['city-streets:citizen']
 - id: city-streets-15
@@ -68,19 +68,19 @@
   npcs: ['city-streets:citizen']
 - id: city-streets-16
   title: Segway Lane
-  description: Another concrete slab in the barren wasteland of The City.
+  description: The most boring, tourist-y part of The City.
   coordinates: [4, 7, 0]
 - id: city-streets-17
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Alley Dumpster
+  description: The alley ends here unceremoniously, a concrete slab with an old forgotten dumpster on it.
   coordinates: [5, 1, 0]
 - id: city-streets-18
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Alley Corner
+  description: To your north and northeast curves a dark, forbidding alley. To your south is a concrete slab.
   coordinates: [5, 2, 0]
 - id: city-streets-19
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Alley Corner
+  description: Here the alley bends east and south, a road to the east and a crossroads to the south.
   coordinates: [5, 3, 0]
 - id: city-streets-20
   title: Fluptic Boulevard
@@ -91,8 +91,8 @@
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [5, 7, 0]
 - id: city-streets-22
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: East Alley Entrance
+  description: A narrow alley between two rotting buildings.
   coordinates: [6, 3, 0]
 - id: city-streets-23
   title: Fluptic Boulevard
@@ -104,27 +104,27 @@
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [6, 7, 0]
 - id: city-streets-25
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Hamptown Road Dog Park
+  description: The remnants of an ancient dog park are here.
   coordinates: [7, 1, 0]
 - id: city-streets-26
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Hamptown Road
+  description: Sunlight glimmers on the concrete here, as the surrounding buildings have fallen.
   coordinates: [7, 2, 0]
   npcs: ['city-streets:citizen']
 - id: city-streets-27
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title:  Hamptown Road
+  description: Shadows from the tenements crumbling around you fill this sad corner of The City.
   coordinates: [7, 3, 0]
 - id: city-streets-28
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Hamptown Road
+  description: What's left of this road crumbles under your feet. The remnants of buildings here leer at you.
   coordinates: [7, 4, 0]
 - id: city-streets-29
-  title: City Streets
-  description: The busiest area of The City, during better times, there are remnants of neon-laced clubs lining both sides of the Boulevard.
+  title: Fluptic Boulevard & Hamptown Road
+  description: The busiest area of The City meets the scariest area of the city. The street looks like it's been hit with an earthquake. The remnants of it curve to the south.
   coordinates: [7, 5, 0]
-- id: city-streets-30
-  title: Segway Lane
-  description: Another concrete slab in the barren wasteland of The City.
+- id: city-streets-30  
+  title: Segway Lane Dead-end
+  description: Another concrete slab in the barren wasteland of The City. A chalk outline is on the ground here.
   coordinates: [7, 7, 0]
