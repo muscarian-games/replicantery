@@ -37,20 +37,20 @@
   description: Another concrete slab in the barren wasteland of The City.
   coordinates: [2, 7, 0]
 - id: city-streets-9
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Phlebas Street Cul-de-sac
+  description: Here the road winds in a small circle before leading you back north. The apartment buildings here appear to have been burnt out some time ago. It's unclear if it was the work of anarchists, hierarchists, or obscenists.
   coordinates: [3, 1, 0]
 - id: city-streets-10
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Phlebas Street
+  description: Here, the former apartment buildings are covered in politically-confused graffiti. One piece reads 'ANARCHY'. Someone has crossed it out and written 'HIERARCHY'. A third person has scrawled an obscenity over both works of art.
   coordinates: [3, 2, 0]
 - id: city-streets-11
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Phlebas Street
+  description: A relatively calm, tucked away street stretches to the south, lined with former apartment buildings now covered with screens showing glitched visuals or old ads.
   coordinates: [3, 3, 0]
 - id: city-streets-12
-  title: City Streets
-  description: Another concrete slab in the barren wasteland of The City.
+  title: Phlebas Street and Fluptic Boulevard Roundabout
+  description: An overly complex roundabout is here, for enabling people to turn on and off the boulevard, a leftover from when The City had car traffic.
   coordinates: [3, 4, 0]
 - id: city-streets-13
   title: Fluptic Boulevard
