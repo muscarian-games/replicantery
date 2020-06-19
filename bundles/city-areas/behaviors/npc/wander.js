@@ -40,7 +40,7 @@ module.exports = srcPath => {
         config = Object.assign({
           areaRestricted: false,
           restrictTo: null,
-          interval: 20,
+          interval: Random.inRange(10, 30)
         }, config);
 
         if (!this._lastWanderTime) {
