@@ -110,7 +110,7 @@ module.exports = {
       state.Leaderboard.setScore(this);
       console.log(state.Leaderboard.getTopNScores(10));
       
-      this.emit('save', () => this.account.save());
+      this.emit('save');
     },
 
     /** Save the player character file. */
@@ -118,6 +118,7 @@ module.exports = {
       await state.PlayerManager.save(this);
       Logger.log('Saved ' + this.name);
       if (typeof callback === 'function') {
+        this.account.save();
         callback();
       }
     },
