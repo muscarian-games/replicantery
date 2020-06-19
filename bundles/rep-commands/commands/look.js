@@ -7,7 +7,7 @@ const getOtherCharactersInRoom = require('../../../lib/getOtherCharactersInRoom'
 const getScannedAmount = require('../lib/getScannedAmount');
 
 const ROLE_EXPOSED_TEXT = {
-  human: 'is sweating',
+  human: 'is holding a glowing scanner',
   replicant: 'has glowing eyes',
 };
 
