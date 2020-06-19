@@ -18,10 +18,9 @@ module.exports = {
 
   options: {
     invalidArgsMessage: 'Who would you like to scan?',
-    invalidRoleMessage: 'You would need a detective\'s scanner.',
-    noOneHereMessage: 'There is no one else here to scan, and you are fairly sure you\'re not a replicant.',
+    invalidRoleMessage: 'You would need a scanner.',
+    noOneHereMessage: 'There is no one else here to scan.',
     targetNotFoundMessage: 'There is no one here called %name%.',
-    requiredRole: 'detective'
   },
 
   requiresTarget: true,
@@ -29,7 +28,7 @@ module.exports = {
   run: (state) => (args, player, target) => {
     const targetCodename = target.metadata.name;
     const playerCodename = player.metadata.name;
-    B.sayAt(player, `You <bold>scan</bold> ${targetCodename} for evidence of replicantery!`);
+    B.sayAt(player, `You <bold>scan</bold> ${targetCodename}!`);
 
     // Scanning places a scanned effect on the target.
     // Scanning 3 times (3 stacked effects) will reveal the role with 100% confidence.

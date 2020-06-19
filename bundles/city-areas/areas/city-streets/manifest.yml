@@ -2,4 +2,4 @@
 title: Tiny City
 behaviors:
   progressive-respawn:
-    interval: 20
+    interval: 2
