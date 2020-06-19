@@ -7,8 +7,8 @@ const getOtherCharactersInRoom = require('../../../lib/getOtherCharactersInRoom'
 const getScannedAmount = require('../lib/getScannedAmount');
 
 const ROLE_EXPOSED_TEXT = {
-  human: 'is holding a glowing scanner',
-  replicant: 'has glowing eyes',
+  human: 'is holding a <red>glowing</red> scanner',
+  replicant: 'has <red>glowing</red> eyes',
 };
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
 
     const { room } = player;
 
-    B.sayAt(player, `${room.title}`);
+    B.sayAt(player, `<bold>${room.title}</bold>`);
     // ${room.entityReference} ${JSON.stringify(room.coordinates)}
     if (!player.getMeta('brief')) {
       B.sayAt(player, room.description, 80);
@@ -38,7 +38,7 @@ module.exports = {
         }
         return name;
       }).join(', ');
-      B.sayAt(player, `Here you find: ${charactersList}.`);
+      B.sayAt(player, `<blue>Here you find:</blue> ${charactersList}.`);
     } else {
       B.sayAt(player, 'No one else is here. You\'re safe for now.');
     }
@@ -59,7 +59,7 @@ module.exports = {
       foundExits.push(exit);
     }
 
-    B.at(player, 'Exits: ');
+    B.at(player, '<cyan>Exits:</cyan> ');
     B.at(player, foundExits.map(exit => {
       const exitRoom = state.RoomManager.getRoom(exit.roomId);
       const door = room.getDoor(exitRoom) || exitRoom.getDoor(room);

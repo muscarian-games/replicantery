@@ -20,7 +20,7 @@ module.exports = function alertAreaWithDistance(state, player, audible) {
     const xDirection = distanceX >= 0 ? 'west' : 'east';
     const yDirection = distanceY >= 0 ? 'north' : 'south';
 
-    const alertString = `You hear the sound of ${audible} from ${
+    const alertString = `You hear the sound of <bold>${audible}</bold> from ${
       distanceX ? `${Math.abs(distanceX)} blocks ${xDirection} ` : ''
     }${
       distanceY ? `${distanceX ? 'and ' : ''}${Math.abs(distanceY)} blocks ${yDirection}` : ''

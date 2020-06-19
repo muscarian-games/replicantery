@@ -29,7 +29,7 @@ module.exports = {
 
     // Handle the consequences of the accusation.
     if (target.metadata.role === 'replicant') {
-      B.sayAt(player, `They must be a replicant! Your scanner melts them down to a puddle of goo.`);
+      B.sayAt(player, `They must be a replicant! Your scanner <red>melts</red> them down to a puddle of goo.`);
       if (!target.isNpc) {
         B.sayAt(target, `${playerCodename} fires their scanner at you! You're doomed!`);
       }
@@ -38,13 +38,13 @@ module.exports = {
       target.emit('death');
     } else {
       // TODO: Player cannot accuse for 30s
-      B.sayAt(player, `Having wrongly accused ${targetCodename}, your replicant scanner malfunctions!`);
+      B.sayAt(player, `Having wrongly accused ${targetCodename}, your replicant scanner <red>malfunctions!</red>`);
       target.emit('point');
       player.emit('point', -1);
       if (!target.isNpc) {
-        B.sayAt(target, `${playerCodename} fires their scanner at you! It starts to malfunction.`);
+        B.sayAt(target, `${playerCodename} <red>fires</red> their scanner at you! It starts to malfunction.`);
       }
-      B.sayAtExcept(player.room, `${playerCodename} fires their scanner at ${targetCodename}. The scanner starts emitting sparks as it refuses to melt an organic human!`, [player, target]);
+      B.sayAtExcept(player.room, `${playerCodename} <red>fires</red> their scanner at ${targetCodename}. The scanner starts emitting sparks as it refuses to melt an organic human!`, [player, target]);
       target.emit('accused', player);
     }
   }
