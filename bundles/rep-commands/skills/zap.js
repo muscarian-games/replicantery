@@ -41,6 +41,10 @@ module.exports = {
       B.sayAt(player, `They are a fellow replicant! Their eyes glow red as their defense systems activate.`);
       if (!target.isNpc) {
         B.sayAt(target, `${playerCodename}'s eyes light up as they zap you! You're exposed!`);
+        const cooldownEffect = state.EffectFactory.create(
+          'cooldown',
+        );
+        target.addEffect(cooldownEffect);
       }
 
       B.sayAtExcept(player.room, `${playerCodename}'s eyes light up as they zap ${targetCodename}. ${targetCodename}'s eyes glow red as they dispel the laser beam!`, [player, target]);

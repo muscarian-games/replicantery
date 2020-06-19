@@ -16,5 +16,7 @@ module.exports = {
       say(`${i}) ${name} (Score: ${score})`);
       i++;
     }
+
+    say(`Current players: ${state.PlayerManager.players.size}`);
   }
 };

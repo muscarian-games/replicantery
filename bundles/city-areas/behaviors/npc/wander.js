@@ -103,7 +103,6 @@ module.exports = srcPath => {
         this.moveTo(randomRoom);
         
         Broadcast.sayAtExcept(randomRoom, `${this.metadata.name} enters from the ${REVERSE_DIRECTION_MAP[direction]}.`, this);
-
       }
     }
   };
