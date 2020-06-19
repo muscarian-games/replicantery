@@ -40,7 +40,7 @@ module.exports = {
     target.addEffect(scannedEffect);
 
 
-    B.sayAt(target, `You have been <b>scanned</scan> by ${playerCodename}.`);
+    B.sayAt(target, `You have been <b>scanned</b> by ${playerCodename}.`);
     B.sayAtExcept(player.room, `${playerCodename} scans ${targetCodename}!`, [player, target]);
 
     const scannedAmount = getScannedAmount(target);

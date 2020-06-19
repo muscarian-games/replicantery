@@ -18,5 +18,6 @@ module.exports = {
     }
 
     say(`Current players: ${state.PlayerManager.players.size}`);
+    say(`Current bots: ${state.MobManager.mobs.size}`);
   }
 };
