@@ -27,14 +27,11 @@ The goal for replicants is to confuse and deceive the humans.
 - [x] One character per account.
 - [x] ^ If the account has a character, just log them into that directly.
 - [x] Global Leaderboard, per-role Leaderboard - on GameState.
-- [] ^ Show number of current players on leaderboard
-- [] ^ Optimize leaderboard eventually, no need to keep a map of every single account and score.
-- [] Create city map using Axolemma.
-- [] Implement NPC movement.
 
-### About Ranvier
 
-This game is based on Ranvier Tiny:
+### About RanvierMUD Tiny
+
+This game is based on [RanvierMUD Tiny](https://github.com/RanvierMUD/tiny):
 
 RanvierMUD Tiny is a barebones starter kit for people who "know what they're doing" and just want to have a telnet
 connection, login, command parsing, and movement. There is almost nothing here which may be preferable for those that
@@ -63,6 +60,6 @@ git submodule foreach npm install
 
 ### Special Thanks
 
-valtrexman
-Ranviermud Slack
-MUD Coders Guild
+- @nelsonsbrian
+- [RanvierMUD Slack](https://ranviermud.com/#slack) members
+- [MUD Coders Guild](https://mudcoders.com/)
