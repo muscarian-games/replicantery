@@ -24,7 +24,7 @@
     "random-words": "^1.2.0",
     "ranvier": "github:seanohue/core#v3.1.0-replicantery",
     "ranvier-datasource-file": "^1.0.3",
-    "semver": "^5.6.0",
+    "semver": "^5.7.2",
     "sprintf-js": "^1.0.3",
     "sty": "",
     "uuid": "^3.3.2",
